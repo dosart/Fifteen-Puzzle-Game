@@ -1,0 +1,35 @@
+cmake_minimum_required(VERSION 3.19)
+
+set(PROJECT_NAME Fifteen_Puzzle_Game)
+project(Fifteen_Puzzle_Game)
+
+set(CMAKE_CXX_STANDARD 20)
+
+add_compile_options(
+        -Werror
+
+        -Wall
+        -Wextra
+        -Wpedantic
+
+        -Wcast-align
+        -Wcast-qual
+        -Wconversion
+        -Wctor-dtor-privacy
+        -Wenum-compare
+        -Wfloat-equal
+        -Wnon-virtual-dtor
+        -Wold-style-cast
+        -Woverloaded-virtual
+        -Wredundant-decls
+        -Wsign-conversion
+        -Wsign-promo
+)
+
+find_package(SFML 2.5 COMPONENTS audio graphics)
+add_executable(${PROJECT_NAME} src/main.cpp include/settings.h)
+target_link_libraries(${PROJECT_NAME} sfml-graphics sfml-audio)
+
+add_subdirectory(external/spdlog)
+target_link_libraries(${PROJECT_NAME} spdlog)
+

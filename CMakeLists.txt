@@ -4,6 +4,7 @@ set(PROJECT_NAME Fifteen_Puzzle_Game)
 project(Fifteen_Puzzle_Game)
 
 set(CMAKE_CXX_STANDARD 20)
+include_directories(include)
 
 add_compile_options(
         -Werror
@@ -27,7 +28,7 @@ add_compile_options(
 )
 
 find_package(SFML 2.5 COMPONENTS audio graphics)
-add_executable(${PROJECT_NAME} src/main.cpp include/settings.h)
+add_executable(${PROJECT_NAME} src/main.cpp include/assets.h)
 target_link_libraries(${PROJECT_NAME} sfml-graphics sfml-audio)
 
 add_subdirectory(external/spdlog)

@@ -2,6 +2,8 @@
 #define FIFTEEN_PUZZLE_GAME_INCLUDE_SETTINGS_H_
 
 #include <SFML/Graphics.hpp>
+#include <string>
+#include <exception>
 
 class AssetsSingleton final {
 
@@ -11,6 +13,15 @@ class AssetsSingleton final {
     return settings;
   }
 
+  sf::Font LoadFont(std::string fontName) {
+    sf::Font font;
+    if (!font.loadFromFile(fontName))
+      throw std::runtime_error("Could not open file");
+    return font;
+  }
+
+  AssetsSingleton() = default;
+  ~AssetsSingleton() = default;
   AssetsSingleton(const AssetsSingleton &) = delete;
   AssetsSingleton &operator=(const AssetsSingleton &) = delete;
 };

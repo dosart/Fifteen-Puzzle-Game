@@ -5,6 +5,8 @@
 #include <string>
 #include <exception>
 
+namespace Game {
+
 class AssetsSingleton final {
 
  public:
@@ -22,12 +24,13 @@ class AssetsSingleton final {
 
   AssetsSingleton() = default;
   ~AssetsSingleton() = default;
- 
+
   AssetsSingleton(const AssetsSingleton &) = delete;
   AssetsSingleton &operator=(const AssetsSingleton &) = delete;
- 
+
   AssetsSingleton(const AssetsSingleton &&) = delete;
   AssetsSingleton &operator=(const AssetsSingleton &&) = delete;
 };
+}
 
 #endif //FIFTEEN_PUZZLE_GAME_INCLUDE_SETTINGS_H_

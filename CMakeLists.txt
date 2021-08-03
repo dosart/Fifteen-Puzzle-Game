@@ -11,6 +11,14 @@ set_target_properties(
         CXX_STANDARD 20
         CXX_STANDARD_REQUIRED ON
  )
+ 
+ set(SOURCES
+        src/main.cpp
+  )
+  
+   set(HEADERS
+        include/assets.h
+  )
 
 include_directories(include)
 
@@ -36,7 +44,7 @@ add_compile_options(
 )
 
 find_package(SFML 2.5 COMPONENTS audio graphics)
-add_executable(${PROJECT_NAME} src/main.cpp include/assets.h)
+add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
 target_link_libraries(${PROJECT_NAME} sfml-graphics sfml-audio)
 
 add_subdirectory(external/spdlog)

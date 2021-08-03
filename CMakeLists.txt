@@ -1,28 +1,18 @@
-cmake_minimum_required(VERSION 3.19)
+cmake_minimum_required(VERSION 3.16)
 
 set(PROJECT_NAME Fifteen_Puzzle_Game)
 project(${PROJECT_NAME} VERSION 0.0.1
-                  DESCRIPTION "Fifteen puzzle game"
-                  LANGUAGES CXX
-)
-                  
-set_target_properties(
-        ${PROJECT_NAME} PROPERTIES
-        CXX_STANDARD 20
-        CXX_STANDARD_REQUIRED ON
- )
- 
- set(SOURCES
+        DESCRIPTION "Fifteen puzzle game"
+        LANGUAGES CXX
+        )
+
+set(SOURCES
         src/main.cpp
-  )
-  
-   set(HEADERS
+        )
+
+set(HEADERS
         include/assets.h
-  )
-  
-  target_include_directories(
-        ${PROJECT_NAME} include
-)
+        )
 
 add_compile_options(
         -Werror
@@ -45,8 +35,19 @@ add_compile_options(
         -Wsign-promo
 )
 
-find_package(SFML REQUIRED 2.5 COMPONENTS audio graphics)
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
+set_target_properties(
+        ${PROJECT_NAME} PROPERTIES
+        CXX_STANDARD 20
+        CXX_STANDARD_REQUIRED ON
+)
+target_include_directories(
+        ${PROJECT_NAME}
+        PRIVATE
+        include
+)
+
+find_package(SFML 2.5 COMPONENTS audio graphics)
 target_link_libraries(${PROJECT_NAME} sfml-graphics sfml-audio)
 
 add_subdirectory(external/spdlog)

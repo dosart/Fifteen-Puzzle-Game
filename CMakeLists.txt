@@ -43,7 +43,7 @@ add_compile_options(
         -Wsign-promo
 )
 
-find_package(SFML 2.5 COMPONENTS audio graphics)
+find_package(SFML REQUIRED 2.5 COMPONENTS audio graphics)
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
 target_link_libraries(${PROJECT_NAME} sfml-graphics sfml-audio)
 

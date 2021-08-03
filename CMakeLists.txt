@@ -19,8 +19,10 @@ set_target_properties(
    set(HEADERS
         include/assets.h
   )
-
-include_directories(include)
+  
+  target_include_directories(
+        ${PROJECT_NAME} include
+)
 
 add_compile_options(
         -Werror

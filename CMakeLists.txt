@@ -1,7 +1,9 @@
 cmake_minimum_required(VERSION 3.19)
 
 set(PROJECT_NAME Fifteen_Puzzle_Game)
-project(Fifteen_Puzzle_Game)
+project(${PROJECT_NAME} VERSION 0.0.1
+                  DESCRIPTION "Fifteen puzzle game"
+                  LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 include_directories(include)

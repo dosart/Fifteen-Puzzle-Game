@@ -7,7 +7,7 @@ project(${PROJECT_NAME} VERSION 0.0.1
 )
                   
 set_target_properties(
-        ${PROJECT_NAME PROPERTIES
+        ${PROJECT_NAME} PROPERTIES
         CXX_STANDARD 20
         CXX_STANDARD_REQUIRED ON
  )

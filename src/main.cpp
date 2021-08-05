@@ -1,8 +1,9 @@
-#include <SFML/Graphics.hpp>
-#include <assets.h>
-#include "spdlog/spdlog.h"
+#include "log.h"
 
 int main()
 {
+  ::Game::Log::Init();
+  GAME_WARN("Initialized log!");
+
   return 0;
 }

@@ -1,3 +1,9 @@
+###################################################################################################
+##
+##      Information about project
+##
+###################################################################################################
+
 cmake_minimum_required(VERSION 3.16)
 
 set(PROJECT_NAME Fifteen_Puzzle_Game)
@@ -6,15 +12,11 @@ project(${PROJECT_NAME} VERSION 0.0.1
         LANGUAGES CXX
         )
 
-set(SOURCES
-        src/main.cpp
-        src/log.cpp
-        src/board.cpp)
-
-set(HEADERS
-        include/assets.h
-        include/log.h
-        include/board.h)
+###################################################################################################
+##
+##      Compilation options
+##
+###################################################################################################
 
 add_compile_options(
         -Werror
@@ -37,6 +39,22 @@ add_compile_options(
         -Wsign-promo
 )
 
+###################################################################################################
+##
+##      Source files
+##
+###################################################################################################
+
+set(SOURCES
+        src/main.cpp
+        src/log.cpp
+        src/board.cpp)
+
+set(HEADERS
+        include/assets.h
+        include/log.h
+        include/board.h)
+
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
 set_target_properties(
         ${PROJECT_NAME} PROPERTIES
@@ -49,8 +67,20 @@ target_include_directories(
         include
 )
 
+###################################################################################################
+##
+##      SFML link
+##
+###################################################################################################
+
 find_package(SFML 2.5 COMPONENTS audio graphics)
 target_link_libraries(${PROJECT_NAME} sfml-graphics sfml-audio)
+
+###################################################################################################
+##
+##      spdlog link
+##
+###################################################################################################
 
 add_subdirectory(external/spdlog)
 target_link_libraries(${PROJECT_NAME} spdlog)

@@ -8,11 +8,13 @@ project(${PROJECT_NAME} VERSION 0.0.1
 
 set(SOURCES
         src/main.cpp
-        src/log.cpp)
+        src/log.cpp
+        src/board.cpp)
 
 set(HEADERS
         include/assets.h
-        include/log.h)
+        include/log.h
+        include/board.h)
 
 add_compile_options(
         -Werror

@@ -14,6 +14,15 @@ project(${PROJECT_NAME} VERSION 0.0.1
 
 ###################################################################################################
 ##
+##      Project options
+##
+###################################################################################################
+
+option(USE_DOC "Turn on documentation" ON)
+option(USE_TEST "Turn on testing" ON)
+
+###################################################################################################
+##
 ##      Compilation options
 ##
 ###################################################################################################
@@ -85,3 +94,14 @@ target_link_libraries(${PROJECT_NAME} sfml-graphics sfml-audio)
 add_subdirectory(external/spdlog)
 target_link_libraries(${PROJECT_NAME} spdlog)
 
+###################################################################################################
+##
+##      Documentation
+##
+###################################################################################################
+
+if(NOT USE_DOC)
+    message(STATUS "Autodocumentation is disabled")
+else()
+    add_subdirectory(doc)
+endif()

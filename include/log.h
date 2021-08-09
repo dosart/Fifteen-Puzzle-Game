@@ -1,3 +1,8 @@
+/*!
+\file
+\brief Header file for logger class
+*/
+
 #ifndef FIFTEEN_PUZZLE_GAME_INCLUDE_LOG_H_
 #define FIFTEEN_PUZZLE_GAME_INCLUDE_LOG_H_
 
@@ -8,9 +13,26 @@
 
 namespace Game {
 
+/*!
+	\brief Logger class
+	\author Dosart
+	\version 1.0
+	\date 09.08.2021
+
+	Simple static logger for game.
+*/
 class Log final {
  public:
+  /**
+    * @brief Initialize logger
+ */
   static void Init();
+
+  /**
+    * @brief Return logger
+    *
+    * @return spdlog format logger
+*/
   static std::shared_ptr<spdlog::logger> GetLogger() { return logger; }
 
  private:

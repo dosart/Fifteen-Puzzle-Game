@@ -11,7 +11,7 @@ bool Game::Board::Correct() {
   return std::is_sorted(std::begin(board), std::end(board) - 1);
 }
 
-void Game::Board::SwapWithEmpty(Game::Direction direction) {
+void Game::Board::moveEmptyPlate(Game::Direction direction) {
   auto[row, column] = Convert1DIndexTo2DIndex(empty_index, kRowCount, kRowCount);
 
   int move_index = -1;

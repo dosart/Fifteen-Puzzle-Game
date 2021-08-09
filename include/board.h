@@ -1,3 +1,8 @@
+/*!
+\file
+\brief Header file for implementation game board
+*/
+
 #ifndef FIFTEEN_PUZZLE_GAME_INCLUDE_BOARD_H_
 #define FIFTEEN_PUZZLE_GAME_INCLUDE_BOARD_H_
 
@@ -12,13 +17,33 @@ namespace Game {
 
 enum class Direction { Left = 0, Right = 1, Up = 2, Down = 3 };
 
+/*!
+	\brief Game board class
+	\author Dosart
+	\version 1.0
+	\date 09.08.2021
+*/
 class Board final {
  public:
+  /**
+     * @brief Fills the array with elements in the correct order
+ */
   Board();
   ~Board() = default;
 
+  /**
+    * @brief Checks if the puzzle is solved and returns the result of the check
+    *
+    * @return result of the check
+ */
   bool Correct();
-  void SwapWithEmpty(Direction direction);
+
+  /**
+    * @brief Swap an empty plate and a user plate
+    *
+    * @return result of the check
+*/
+  void moveEmptyPlate(Direction direction);
 
  private:
   const int kRowCount = 4;

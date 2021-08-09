@@ -105,3 +105,15 @@ if(NOT USE_DOC)
 else()
     add_subdirectory(doc)
 endif()
+
+###################################################################################################
+##
+##      Tests
+##
+###################################################################################################
+
+if(NOT USE_TEST)
+    message(STATUS "Tests is disabled")
+else()
+    add_subdirectory(test)
+endif()

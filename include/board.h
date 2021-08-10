@@ -28,7 +28,7 @@ class Board final {
   /**
      * @brief Fills the array with elements in the correct order
  */
-  Board();
+  Board(int row_count = 4, int column_count = 4);
   ~Board() = default;
 
   /**
@@ -46,13 +46,14 @@ class Board final {
   void moveEmptyPlate(Direction direction);
 
  private:
-  const int kRowCount = 4;
-  const int kBoardSize = kRowCount*kRowCount;
+  int row_count = 4;
+  int column_count = 4;
+  int cell_count = row_count*row_count;
   int empty_index;
 
   std::vector<int> board;
 
-  coordinate Convert1DIndexTo2DIndex(int index1d, int row_count, int column_count);
+  coordinate Convert1DIndexTo2DIndex(int index1d, int rows, int columns);
 };
 }
 

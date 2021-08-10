@@ -1,5 +1,14 @@
-//
-// Created by dosart on 8/10/21.
-//
-
 #include "game_model.h"
+#include "board.h"
+
+namespace Game {
+FifteenPuzzleGame::FifteenPuzzleGame() : board{kRowCount, kColumnCount} {}
+
+void FifteenPuzzleGame::Reload() {
+  board.Init();
+}
+
+void FifteenPuzzleGame::MoveEmptyPlate(Direction direction) {
+  board.MoveEmptyPlate(direction);
+}
+}

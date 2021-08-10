@@ -31,6 +31,8 @@ class Board final {
   Board(int row_count = 4, int column_count = 4);
   ~Board() = default;
 
+  void Init();
+
   /**
     * @brief Checks if the puzzle is solved and returns the result of the check
     *
@@ -43,7 +45,7 @@ class Board final {
     *
     * @return result of the check
 */
-  void moveEmptyPlate(Direction direction);
+  void MoveEmptyPlate(Direction direction);
 
  private:
   int row_count = 4;

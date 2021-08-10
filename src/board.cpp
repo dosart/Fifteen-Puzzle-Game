@@ -2,6 +2,10 @@
 
 Game::Board::Board(int rows, int columns)
     : row_count{rows}, column_count{columns}, cell_count{rows*column_count}, empty_index{cell_count - 1} {
+  Init();
+}
+
+void Game::Board::Init() {
   std::iota(std::begin(board), std::end(board), 1);
   auto index = static_cast<std::vector<int>::size_type>(empty_index);
   board[index] = 0;
@@ -11,7 +15,7 @@ bool Game::Board::Correct() {
   return std::is_sorted(std::begin(board), std::end(board) - 1);
 }
 
-void Game::Board::moveEmptyPlate(Game::Direction direction) {
+void Game::Board::MoveEmptyPlate(Game::Direction direction) {
   auto[row, column] = Convert1DIndexTo2DIndex(empty_index, row_count, row_count);
 
   int move_index = -1;

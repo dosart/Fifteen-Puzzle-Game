@@ -6,13 +6,13 @@ Game::Board::Board(int rows, int columns)
 }
 
 void Game::Board::Init() {
-  std::iota(std::begin(board), std::end(board), 1);
+  std::iota(std::begin(_board), std::end(_board), 1);
   auto index = static_cast<std::vector<int>::size_type>(_empty_index);
-  board[index] = 0;
+  _board[index] = 0;
 }
 
 bool Game::Board::Correct() {
-  return std::is_sorted(std::begin(board), std::end(board) - 1);
+  return std::is_sorted(std::begin(_board), std::end(_board) - 1);
 }
 
 void Game::Board::MoveEmptyPlate(Game::Direction direction) {
@@ -25,7 +25,7 @@ void Game::Board::MoveEmptyPlate(Game::Direction direction) {
   if (direction==Direction::Down && row > 0) move_index = _empty_index - _row_count;
 
   if (_empty_index >= 0 && move_index >= 0) {
-    std::iter_swap(std::begin(board) + _empty_index, std::begin(board) + move_index);
+    std::iter_swap(std::begin(_board) + _empty_index, std::begin(_board) + move_index);
   }
 
 }
@@ -36,9 +36,17 @@ coordinate Game::Board::Convert1DIndexTo2DIndex(int index1d, int rows, int colum
 
 int Game::Board::at(int row, int column) {
   auto index = static_cast<std::vector<int>::size_type>(Convert2DIndexTo1DIndex(row, column, _row_count));
-  return board[index];
+  return _board[index];
 }
 
 int Game::Board::Convert2DIndexTo1DIndex(int row, int column, int row_count) {
   return row*row_count + column;
+}
+
+constexpr int Game::Board::GetRowCount() const {
+  return _row_count;
+}
+
+constexpr int Game::Board::GetColumnCount() const {
+  return _column_count;
 }

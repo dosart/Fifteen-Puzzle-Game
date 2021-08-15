@@ -35,9 +35,10 @@ coordinate Game::Board::Convert1DIndexTo2DIndex(int index1d, int rows, int colum
 }
 
 int Game::Board::at(int row, int column) {
-  int index = Convert2DIndexTo1DIndex(row, column, _row_count);
+  auto index = static_cast<std::vector<int>::size_type>(Convert2DIndexTo1DIndex(row, column, _row_count));
+  return board[index];
 }
 
 int Game::Board::Convert2DIndexTo1DIndex(int row, int column, int row_count) {
-  return row * row_count + column;
+  return row*row_count + column;
 }

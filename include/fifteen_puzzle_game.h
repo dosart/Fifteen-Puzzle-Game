@@ -13,11 +13,12 @@ class FifteenPuzzleGame final {
 
   void Reload();
   void MoveEmptyPlate(Direction direction);
+  Board &GetBoard();
  private:
-  const int kRowCount = 4;
-  const int kColumnCount = 4;
+  const int _kRowCount = 4;
+  const int _kColumnCount = 4;
 
-  Board board;
+  Board _board;
 };
 }
 #endif //FIFTEEN_PUZZLE_GAME_SRC_GAME_MODEL_H_

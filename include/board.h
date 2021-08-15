@@ -47,15 +47,17 @@ class Board final {
 */
   void MoveEmptyPlate(Direction direction);
 
+  int at(int row, int column);
  private:
-  int row_count = 4;
-  int column_count = 4;
-  int cell_count = row_count*row_count;
-  int empty_index;
+  int _row_count = 4;
+  int _column_count = 4;
+  int _cell_count = _row_count*_row_count;
+  int _empty_index;
 
   std::vector<int> board;
 
   coordinate Convert1DIndexTo2DIndex(int index1d, int rows, int columns);
+  int Convert2DIndexTo1DIndex(int row, int column, int row_count);
 };
 }
 

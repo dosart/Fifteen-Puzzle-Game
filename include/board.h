@@ -39,6 +39,8 @@ class Board final {
     * @return result of the check
  */
   bool Correct();
+  bool isElementCorrect(int row, int column);
+  bool isNotEmpty(int row, int column);
 
   /**
     * @brief Swap an empty plate and a user plate

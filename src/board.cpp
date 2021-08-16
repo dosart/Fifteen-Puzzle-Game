@@ -15,6 +15,11 @@ bool Game::Board::Correct() {
   return std::is_sorted(std::begin(_board), std::end(_board) - 1);
 }
 
+bool Game::Board::isElementCorrect(int row, int column) {
+  auto index = static_cast<std::vector<int>::size_type>(Convert2DIndexTo1DIndex(row, column, _row_count));
+  return _board[index]==_board[index] + 1;
+}
+
 void Game::Board::MoveEmptyPlate(Game::Direction direction) {
   auto[row, column] = Convert1DIndexTo2DIndex(_empty_index, _row_count, _row_count);
 
@@ -34,6 +39,11 @@ coordinate Game::Board::Convert1DIndexTo2DIndex(int index1d, int rows, int colum
   return std::make_pair(index1d/rows, index1d%columns);
 }
 
+bool Game::Board::isNotEmpty(int row, int column) {
+  int value = this->at(row, column);
+  return value > 0;
+}
+
 int Game::Board::at(int row, int column) {
   auto index = static_cast<std::vector<int>::size_type>(Convert2DIndexTo1DIndex(row, column, _row_count));
   return _board[index];
@@ -50,3 +60,4 @@ constexpr int Game::Board::GetRowCount() const {
 constexpr int Game::Board::GetColumnCount() const {
   return _column_count;
 }
+

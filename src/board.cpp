@@ -53,11 +53,11 @@ int Game::Board::Convert2DIndexTo1DIndex(int row, int column, int row_count) {
   return row*row_count + column;
 }
 
-constexpr int Game::Board::GetRowCount() const {
+int Game::Board::GetRowCount() const {
   return _row_count;
 }
 
-constexpr int Game::Board::GetColumnCount() const {
+int Game::Board::GetColumnCount() const {
   return _column_count;
 }
 

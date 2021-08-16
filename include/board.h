@@ -50,8 +50,8 @@ class Board final {
   void MoveEmptyPlate(Direction direction);
 
   int at(int row, int column);
-  constexpr int GetRowCount() const;
-  constexpr int GetColumnCount() const;
+  int GetRowCount() const;
+  int GetColumnCount() const;
  private:
   int _row_count = 4;
   int _column_count = 4;

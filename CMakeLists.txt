@@ -18,8 +18,8 @@ project(${PROJECT_NAME} VERSION 0.0.1
 ##
 ###################################################################################################
 
-option(USE_DOC "Turn on documentation" ON)
-option(USE_TEST "Turn on testing" ON)
+option(USE_DOC "Turn on documentation" OFF)
+option(USE_TEST "Turn on testing" OFF)
 
 ###################################################################################################
 ##
@@ -57,12 +57,16 @@ add_compile_options(
 set(SOURCES
         src/main.cpp
         src/log.cpp
-        src/board.cpp)
+        src/board.cpp
+        src/fifteen_puzzle_game.cpp
+        src/game_render.cpp)
 
 set(HEADERS
         include/assets.h
         include/log.h
-        include/board.h)
+        include/board.h
+        include/fifteen_puzzle_game.h
+        include/game_render.h)
 
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
 set_target_properties(
@@ -100,20 +104,8 @@ target_link_libraries(${PROJECT_NAME} spdlog)
 ##
 ###################################################################################################
 
-if(NOT USE_DOC)
+if (NOT USE_DOC)
     message(STATUS "Autodocumentation is disabled")
-else()
+else ()
     add_subdirectory(doc)
-endif()
-
-###################################################################################################
-##
-##      Tests
-##
-###################################################################################################
-
-if(NOT USE_TEST)
-    message(STATUS "Tests is disabled")
-else()
-    add_subdirectory(test)
-endif()
+endif ()

@@ -2,20 +2,20 @@
 #include "board.h"
 
 namespace Game {
-FifteenPuzzleGame::FifteenPuzzleGame() : _board{_kRowCount, _kColumnCount} {}
+FifteenPuzzleGame::FifteenPuzzleGame() : m_board{m_kRowCount, m_kColumnCount} {}
 
 void FifteenPuzzleGame::Reload() {
-  _board.Init();
+  m_board.Init();
 }
 
 void FifteenPuzzleGame::MoveEmptyPlate(Direction direction) {
-  _board.MoveEmptyPlate(direction);
+  m_board.MoveEmptyPlate(direction);
 }
 
 Board &FifteenPuzzleGame::GetBoard() {
-  return _board;
+  return m_board;
 }
-bool FifteenPuzzleGame::isSolved() const {
-  return _board.IsSolved();
+bool FifteenPuzzleGame::IsSolved() const {
+  return m_board.IsSolved();
 }
 }

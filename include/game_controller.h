@@ -6,11 +6,12 @@
 
 namespace Game {
 class GameController final {
-  FifteenPuzzleGame *_game;
-  GameRender *_render;
+  FifteenPuzzleGame *m_game;
+  GameRender *m_render;
  public:
   GameController(FifteenPuzzleGame *game, GameRender *render);
   ~GameController() = default;
+
   void Run();
 };
 }

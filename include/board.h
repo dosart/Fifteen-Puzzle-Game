@@ -1,6 +1,6 @@
 /*!
 \file
-\brief Header file for implementation _game _board
+\brief Header file for implementation m_game m_board
 */
 
 #ifndef FIFTEEN_PUZZLE_GAME_INCLUDE_BOARD_H_
@@ -19,7 +19,7 @@ namespace Game {
 enum class Direction { Left = 0, Right = 1, Up = 2, Down = 3 };
 
 /*!
-	\brief Game _board class
+	\brief Game m_board class
 	\author Dosart
 	\version 1.0
 	\date 09.08.2021

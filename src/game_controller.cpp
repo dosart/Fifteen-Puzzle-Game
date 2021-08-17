@@ -3,29 +3,29 @@
 namespace Game {
 
 GameController::GameController(FifteenPuzzleGame *game, GameRender *render)
-    : _game(game), _render(render) {
+    : m_game(game), m_render(render) {
 
 }
 void GameController::Run() {
   sf::Event event;
 
-  while (_render->Window().isOpen()) {
-    while (_render->Window().pollEvent(event)) {
-      if (event.type==sf::Event::Closed) _render->Window().close();
+  while (m_render->Window().isOpen()) {
+    while (m_render->Window().pollEvent(event)) {
+      if (event.type==sf::Event::Closed) m_render->Window().close();
       if (event.type==sf::Event::KeyPressed) {
         // Получаем нажатую клавишу - выполняем соответствующее действие
-        if (event.key.code==sf::Keyboard::Escape) _render->Window().close();
-        if (event.key.code==sf::Keyboard::Left) _game->MoveEmptyPlate(Direction::Left);
-        if (event.key.code==sf::Keyboard::Right) _game->MoveEmptyPlate(Direction::Right);
-        if (event.key.code==sf::Keyboard::Up) _game->MoveEmptyPlate(Direction::Up);
-        if (event.key.code==sf::Keyboard::Down) _game->MoveEmptyPlate(Direction::Down);
+        if (event.key.code==sf::Keyboard::Escape) m_render->Window().close();
+        if (event.key.code==sf::Keyboard::Left) m_game->MoveEmptyPlate(Direction::Left);
+        if (event.key.code==sf::Keyboard::Right) m_game->MoveEmptyPlate(Direction::Right);
+        if (event.key.code==sf::Keyboard::Up) m_game->MoveEmptyPlate(Direction::Up);
+        if (event.key.code==sf::Keyboard::Down) m_game->MoveEmptyPlate(Direction::Down);
         // Новая игра
         if (event.key.code==sf::Keyboard::F2) {
-          _game->Reload();
+          m_game->Reload();
         }
       }
     }
-    _render->Render();
+    m_render->Render();
   }
 
 }

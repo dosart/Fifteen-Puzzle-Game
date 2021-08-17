@@ -11,9 +11,12 @@ class FifteenPuzzleGame final {
   FifteenPuzzleGame();
   ~FifteenPuzzleGame() = default;
 
+  Board &GetBoard();
+
   void Reload();
   void MoveEmptyPlate(Direction direction);
-  Board &GetBoard();
+
+  bool isSolved() const;
  private:
   const int _kRowCount = 4;
   const int _kColumnCount = 4;

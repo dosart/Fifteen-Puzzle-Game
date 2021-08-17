@@ -15,4 +15,7 @@ void FifteenPuzzleGame::MoveEmptyPlate(Direction direction) {
 Board &FifteenPuzzleGame::GetBoard() {
   return _board;
 }
+bool FifteenPuzzleGame::isSolved() const {
+  return _board.Correct();
+}
 }

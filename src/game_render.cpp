@@ -39,18 +39,29 @@ void Game::GameRender::draw(sf::RenderTarget &target, sf::RenderStates states) c
   cellOfBoard.setOutlineColor(color);
   cellOfBoard.setFillColor(sf::Color::Transparent);
 
+  sf::Text textInCell("", _font, 52);
+  textInCell.setFillColor(sf::Color::Green);
+
   auto &board = _game->GetBoard();
   for (auto row = 0; row < board.GetRowCount(); ++row) {
     for (auto column = 0; column < board.GetColumnCount(); ++column) {
+
+      auto numberAsString = std::to_string(board.at(row, column));
+      textInCell.setString(numberAsString);
+
       float column_float = static_cast<float>(column);
       float row_float = static_cast<float>(row);
 
-      sf::Vector2f position(column_float * kCellSize + 10.f, row_float * kCellSize + 10.f);
+      sf::Vector2f position(column_float*kCellSize + 10.f, row_float*kCellSize + 10.f);
       cellOfBoard.setPosition(position);
+
+      textInCell.setPosition(position.x + 30.f, position.y + 30.f);
       target.draw(cellOfBoard, states);
+
+      if (board.isNotEmptyElement(row, column))
+        target.draw(textInCell, states);
     }
   }
-
 }
 
 sf::RenderWindow &Game::GameRender::Window() {

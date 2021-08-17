@@ -10,6 +10,7 @@
 #include <numeric>
 #include <algorithm>
 #include <utility>
+#include <assert.h>
 
 using coordinate = std::pair<int, int>;
 
@@ -38,9 +39,9 @@ class Board final {
     *
     * @return result of the check
  */
-  bool Correct();
+  bool IsSolved() const;
   bool isElementCorrect(int row, int column);
-  bool isNotEmpty(int row, int column);
+  bool isNotEmptyElement(int row, int column);
 
   /**
     * @brief Swap an empty plate and a user plate

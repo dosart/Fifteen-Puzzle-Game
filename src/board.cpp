@@ -1,7 +1,12 @@
 #include "board.h"
 
 Game::Board::Board(int rows, int columns)
-    : _row_count{rows}, _column_count{columns}, _cell_count{rows*_column_count}, _empty_index{_cell_count - 1} {
+    : _row_count{rows},
+      _column_count{columns},
+      _cell_count{rows*_column_count},
+      _empty_index{_cell_count - 1},
+      _board(16, 0) {
+
   Init();
 }
 
@@ -11,7 +16,7 @@ void Game::Board::Init() {
   _board[index] = 0;
 }
 
-bool Game::Board::Correct() {
+bool Game::Board::IsSolved() const {
   return std::is_sorted(std::begin(_board), std::end(_board) - 1);
 }
 
@@ -39,7 +44,7 @@ coordinate Game::Board::Convert1DIndexTo2DIndex(int index1d, int rows, int colum
   return std::make_pair(index1d/rows, index1d%columns);
 }
 
-bool Game::Board::isNotEmpty(int row, int column) {
+bool Game::Board::isNotEmptyElement(int row, int column) {
   int value = this->at(row, column);
   return value > 0;
 }

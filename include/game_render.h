@@ -13,6 +13,7 @@ class GameRender : public sf::Drawable, public sf::Transformable {
 
   bool Init();
   void Render();
+  sf::RenderWindow& Window();
   virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
  private:

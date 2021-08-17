@@ -3,7 +3,7 @@
 
 Game::GameRender::GameRender(Game::FifteenPuzzleGame *game, sf::Font font)
     : _game{game}, _font{font} {
-
+  Init();
 }
 
 bool Game::GameRender::Init() {
@@ -39,30 +39,21 @@ void Game::GameRender::draw(sf::RenderTarget &target, sf::RenderStates states) c
   cellOfBoard.setOutlineColor(color);
   cellOfBoard.setFillColor(sf::Color::Transparent);
 
-  sf::Text cellContents("", _font, 52);
-
   auto &board = _game->GetBoard();
   for (auto row = 0; row < board.GetRowCount(); ++row) {
-    frameOfBoard.setOutlineColor(color);
-    cellContents.setFillColor(color);
     for (auto column = 0; column < board.GetColumnCount(); ++column) {
-      auto numberAsString = std::to_string(board.at(row, column));
-      cellContents.setString(numberAsString);
+      float column_float = static_cast<float>(column);
+      float row_float = static_cast<float>(row);
 
-      if (board.isElementCorrect(row, column))
-        cellContents.setFillColor(sf::Color::Green);
-
-      if (board.isNotEmpty(row, column)) {
-        float float_column = static_cast<float>(column);
-        float float_row = static_cast<float>(row);
-
-        sf::Vector2f position(float_column*kCellSize + 10.f, float_row*kCellSize + 10.f);
-        cellOfBoard.setPosition(position);
-        cellOfBoard.setPosition(position.x + 30.f + (board.at(row, column) < 10 ? 15.f : 0.f), position.y + 25.f);
-        target.draw(cellOfBoard, states);
-        target.draw(cellOfBoard, states);
-      }
-
+      sf::Vector2f position(column_float * kCellSize + 10.f, row_float * kCellSize + 10.f);
+      cellOfBoard.setPosition(position);
+      target.draw(cellOfBoard, states);
     }
   }
+
 }
+
+sf::RenderWindow &Game::GameRender::Window() {
+  return _window;
+}
+

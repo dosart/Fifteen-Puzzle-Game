@@ -16,6 +16,6 @@ Board &FifteenPuzzleGame::GetBoard() {
   return _board;
 }
 bool FifteenPuzzleGame::isSolved() const {
-  return _board.Correct();
+  return _board.IsSolved();
 }
 }

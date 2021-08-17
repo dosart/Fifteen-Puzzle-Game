@@ -25,6 +25,8 @@ class GameRender : public sf::Drawable, public sf::Transformable {
 
   const float kFieldSize = 500.0;
   const float kCellSize = 120.0;
+
+  void _setPosition(sf::RectangleShape& cellOfBoard, sf::Text& textInCell, int row, int column) const;
 };
 }
 

@@ -59,14 +59,14 @@ set(SOURCES
         src/log.cpp
         src/board.cpp
         src/fifteen_puzzle_game.cpp
-        src/game_render.cpp)
+        src/game_render.cpp src/game_controller.cpp include/game_controller.h)
 
 set(HEADERS
         include/assets.h
         include/log.h
         include/board.h
         include/fifteen_puzzle_game.h
-        include/game_render.h)
+        include/game_render.h src/game_controller.cpp include/game_controller.h)
 
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
 set_target_properties(

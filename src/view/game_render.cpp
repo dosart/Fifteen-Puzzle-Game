@@ -57,7 +57,7 @@ void Game::GameRender::draw(sf::RenderTarget &target, sf::RenderStates states) c
       if (_game->IsSolved()) {
         frameOfBoard.setOutlineColor(sf::Color::Cyan);
         textInCell.setFillColor(sf::Color::Cyan);
-      } else if (board.isElementCorrect(row, column)) {
+      } else if (board.isCellCorrect(row, column)) {
         textInCell.setFillColor(sf::Color::Green);
       }
 

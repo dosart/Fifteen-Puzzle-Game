@@ -20,7 +20,7 @@ bool Game::Board::IsSolved() const {
   return std::is_sorted(std::begin(_board), std::end(_board) - 1);
 }
 
-bool Game::Board::isElementCorrect(int row, int column) {
+bool Game::Board::isCellCorrect(int row, int column) {
   auto index = static_cast<std::vector<int>::size_type>(Convert2DIndexTo1DIndex(row, column, _row_count));
   return _board[index]==_board[index] + 1;
 }

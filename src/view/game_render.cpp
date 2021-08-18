@@ -1,5 +1,5 @@
 
-#include "game_render.h"
+#include "view/game_render.h"
 
 Game::GameRender::GameRender(Game::FifteenPuzzleGame *game, sf::Font font)
     : _game{game}, _font{font} {

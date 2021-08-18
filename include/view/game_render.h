@@ -2,7 +2,7 @@
 #define FIFTEEN_PUZZLE_GAME_SRC_GAME_RENDER_H_
 
 #include <SFML/Graphics.hpp>
-#include "fifteen_puzzle_game.h"
+#include "model/fifteen_puzzle_game.h"
 
 namespace Game {
 

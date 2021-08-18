@@ -2,7 +2,7 @@
 #ifndef FIFTEEN_PUZZLE_GAME_SRC_GAME_MODEL_H_
 #define FIFTEEN_PUZZLE_GAME_SRC_GAME_MODEL_H_
 
-#include "board.h"
+#include "model/board.h"
 
 namespace Game {
 class FifteenPuzzleGame final {

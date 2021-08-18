@@ -1,5 +1,5 @@
-#include "fifteen_puzzle_game.h"
-#include "board.h"
+#include "model/fifteen_puzzle_game.h"
+#include "model/board.h"
 
 namespace Game {
 FifteenPuzzleGame::FifteenPuzzleGame() : m_board{m_kRowCount, m_kColumnCount} {}

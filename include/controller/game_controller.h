@@ -1,7 +1,7 @@
 #ifndef FIFTEEN_PUZZLE_GAME_INCLUDE_GAME_CONTROLLER_H_
 #define FIFTEEN_PUZZLE_GAME_INCLUDE_GAME_CONTROLLER_H_
 
-#include "game_render.h"
+#include "view/game_render.h"
 #include "game_controller.h"
 
 namespace Game {

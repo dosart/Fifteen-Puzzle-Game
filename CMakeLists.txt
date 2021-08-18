@@ -57,16 +57,18 @@ add_compile_options(
 set(SOURCES
         src/main.cpp
         src/log.cpp
-        src/board.cpp
-        src/fifteen_puzzle_game.cpp
-        src/game_render.cpp src/game_controller.cpp include/game_controller.h)
+        src/model/board.cpp
+        src/model/fifteen_puzzle_game.cpp
+        src/view/game_render.cpp
+        src/controller/game_controller.cpp)
 
 set(HEADERS
         include/assets.h
         include/log.h
-        include/board.h
-        include/fifteen_puzzle_game.h
-        include/game_render.h src/game_controller.cpp include/game_controller.h)
+        include/model/board.h
+        include/model/fifteen_puzzle_game.h
+        include/view/game_render.h
+        include/controller/game_controller.h)
 
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
 set_target_properties(

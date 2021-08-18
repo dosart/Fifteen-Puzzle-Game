@@ -1,4 +1,4 @@
-#include "board.h"
+#include "model/board.h"
 
 Game::Board::Board(int rows, int columns)
     : _row_count{rows},

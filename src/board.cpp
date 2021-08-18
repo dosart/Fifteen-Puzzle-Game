@@ -36,6 +36,7 @@ void Game::Board::MoveEmptyPlate(Game::Direction direction) {
 
   if (_empty_index >= 0 && move_index >= 0) {
     std::iter_swap(std::begin(_board) + _empty_index, std::begin(_board) + move_index);
+    std::swap(_empty_index, move_index);
   }
 
 }

@@ -98,12 +98,12 @@ class Board final {
 */
   int GetColumnCount() const;
  private:
-  int _row_count = 4;
-  int _column_count = 4;
-  int _cell_count = _row_count*_row_count;
-  int _empty_index;
+  int m_row_count = 4;
+  int m_column_count = 4;
+  int m_cell_count = m_row_count*m_row_count;
+  int m_empty_index;
 
-  std::vector<int> _board;
+  std::vector<int> m_board;
 
   coordinate Convert1DIndexTo2DIndex(int index1d, int rows, int columns);
   int Convert2DIndexTo1DIndex(int row, int column, int row_count);

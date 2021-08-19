@@ -1,6 +1,7 @@
 /*!
 \file
 \brief Header file for implementation controller.
+\defgroup controller
 
  Implements the Game Loop Design Pattern:
     - polling I/O devices;
@@ -18,6 +19,7 @@ namespace Game {
 /*!
 	\brief Controller class.
 	\author Dosart
+    \ingroup controller
 	\version 1.0
 */
 class GameController final {

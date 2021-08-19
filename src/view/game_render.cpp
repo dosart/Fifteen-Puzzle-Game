@@ -2,29 +2,29 @@
 #include "view/game_render.h"
 
 Game::GameRender::GameRender(Game::FifteenPuzzleGame *game, sf::Font font)
-    : _game{game}, _font{font} {
-  Init();
+    : m_game{game}, m_font{font} {
+  _init();
 }
 
 sf::RenderWindow &Game::GameRender::Window() {
-  return _window;
+  return m_window;
 }
 
-bool Game::GameRender::Init() {
+bool Game::GameRender::_init() {
   setPosition(50.f, 50.f);
-  _window.create(sf::VideoMode(600, 600), "Fifteen-Puzzle-Game");
-  _window.setFramerateLimit(60);
-  _text = sf::Text("F2 - New Game / Esc - Exit / Arrow Keys - Move Tile", _font, 20);
-  _text.setFillColor(sf::Color::Cyan);
-  _text.setPosition(5.f, 5.f);
+  m_window.create(sf::VideoMode(600, 600), "Fifteen-Puzzle-Game");
+  m_window.setFramerateLimit(60);
+  m_text = sf::Text("F2 - New Game / Esc - Exit / Arrow Keys - Move Tile", m_font, 20);
+  m_text.setFillColor(sf::Color::Cyan);
+  m_text.setPosition(5.f, 5.f);
   return true;
 }
 
 void Game::GameRender::Render() {
-  _window.clear();
-  _window.draw(*this);
-  _window.draw(_text);
-  _window.display();
+  m_window.clear();
+  m_window.draw(*this);
+  m_window.draw(m_text);
+  m_window.display();
 }
 
 void Game::GameRender::draw(sf::RenderTarget &target, sf::RenderStates states) const {
@@ -43,9 +43,9 @@ void Game::GameRender::draw(sf::RenderTarget &target, sf::RenderStates states) c
   cellOfBoard.setOutlineColor(color);
   cellOfBoard.setFillColor(sf::Color::Transparent);
 
-  sf::Text textInCell("", _font, 52);
+  sf::Text textInCell("", m_font, 52);
 
-  auto &board = _game->GetBoard();
+  auto &board = m_game->GetBoard();
   for (auto row = 0; row < board.GetRowCount(); ++row) {
     for (auto column = 0; column < board.GetColumnCount(); ++column) {
 
@@ -54,7 +54,7 @@ void Game::GameRender::draw(sf::RenderTarget &target, sf::RenderStates states) c
 
       _setPosition(cellOfBoard, textInCell, row, column);
 
-      if (_game->IsSolved()) {
+      if (m_game->IsSolved()) {
         frameOfBoard.setOutlineColor(sf::Color::Cyan);
         textInCell.setFillColor(sf::Color::Cyan);
       } else if (board.isCellCorrect(row, column)) {

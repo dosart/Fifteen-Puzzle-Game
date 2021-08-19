@@ -1,6 +1,8 @@
 /*!
 \file
 \brief Header file for implementation game board for Fifteen Puzzle Game.
+
+\defgroup model
 */
 #ifndef FIFTEEN_PUZZLE_GAME_INCLUDE_BOARD_H_
 #define FIFTEEN_PUZZLE_GAME_INCLUDE_BOARD_H_
@@ -17,6 +19,7 @@ namespace Game {
 
 /*!
 	\brief Keyboard arrow keys class.
+    \ingroup model
 	\version 1.0
 */
 enum class Direction { Left = 0, Right = 1, Up = 2, Down = 3 };

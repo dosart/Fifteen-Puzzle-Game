@@ -19,9 +19,9 @@ void GameController::Run() {
         if (event.key.code==sf::Keyboard::Right) m_game->MoveEmptyPlate(Direction::Right);
         if (event.key.code==sf::Keyboard::Up) m_game->MoveEmptyPlate(Direction::Up);
         if (event.key.code==sf::Keyboard::Down) m_game->MoveEmptyPlate(Direction::Down);
-        // Новая игра
+        // New game
         if (event.key.code==sf::Keyboard::F2) {
-          m_game->Reload();
+          m_game->StartNewGame();
         }
       }
     }

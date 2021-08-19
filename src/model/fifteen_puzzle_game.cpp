@@ -4,7 +4,7 @@
 namespace Game {
 FifteenPuzzleGame::FifteenPuzzleGame() : m_board{m_kRowCount, m_kColumnCount} {}
 
-void FifteenPuzzleGame::Reload() {
+void FifteenPuzzleGame::StartNewGame() {
   m_board.Init();
 }
 

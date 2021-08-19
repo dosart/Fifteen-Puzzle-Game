@@ -1,3 +1,9 @@
+/*!
+\file
+\brief Header file for Simple class for game draw.
+\defgroup view
+\defgroup model
+*/
 #ifndef FIFTEEN_PUZZLE_GAME_SRC_GAME_RENDER_H_
 #define FIFTEEN_PUZZLE_GAME_SRC_GAME_RENDER_H_
 
@@ -6,27 +12,52 @@
 
 namespace Game {
 
+/*!
+	\brief Class for drawing game.
+	\author Dosart
+    \ingroup view
+	\version 1.0
+*/
 class GameRender : public sf::Drawable, public sf::Transformable {
  public:
+  /**
+    * @brief Make simple render.
+    *
+    * @param game Game.
+    * @param font Font for game.
+
+*/
   GameRender(FifteenPuzzleGame *game, sf::Font font);
   ~GameRender() = default;
 
-  bool Init();
+  /**
+    * @brief Refresh window state.
+*/
   void Render();
-  sf::RenderWindow& Window();
-  virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
+
+  /**
+  * @brief Returns game's window.
+  * @return game's window
+*/
+  sf::RenderWindow &Window();
+
+  /**
+  * @brief Draws board's frame and cells.
+*/
+  virtual void draw(sf::RenderTarget &target, sf::RenderStates states) const;
 
  private:
-  FifteenPuzzleGame *_game;
-  sf::Font _font;
+  FifteenPuzzleGame *m_game;
+  sf::Font m_font;
 
-  sf::RenderWindow _window;
-  sf::Text _text;
+  sf::RenderWindow m_window;
+  sf::Text m_text;
 
   const float kFieldSize = 500.0;
   const float kCellSize = 120.0;
 
-  void _setPosition(sf::RectangleShape& cellOfBoard, sf::Text& textInCell, int row, int column) const;
+  bool _init();
+  void _setPosition(sf::RectangleShape &cellOfBoard, sf::Text &textInCell, int row, int column) const;
 };
 }
 

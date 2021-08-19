@@ -18,7 +18,7 @@ project(${PROJECT_NAME} VERSION 0.0.1
 ##
 ###################################################################################################
 
-option(USE_DOC "Turn on documentation" OFF)
+option(USE_DOC "Turn on documentation" ON)
 option(USE_TEST "Turn on testing" OFF)
 
 ###################################################################################################
@@ -70,6 +70,8 @@ set(HEADERS
         include/view/game_render.h
         include/controller/game_controller.h)
 
+set(PROJECT_INCLUDE_DIR include)
+
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
 set_target_properties(
         ${PROJECT_NAME} PROPERTIES
@@ -79,7 +81,7 @@ set_target_properties(
 target_include_directories(
         ${PROJECT_NAME}
         PRIVATE
-        include
+        ${PROJECT_INCLUDE_DIR}
 )
 
 ###################################################################################################

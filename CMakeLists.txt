@@ -54,29 +54,24 @@ add_compile_options(
 ##
 ###################################################################################################
 
-set(SOURCES
+set(PROJECT_INCLUDE_DIR include)
+
+
+add_executable(${PROJECT_NAME})
+set_target_properties(
+        ${PROJECT_NAME} PROPERTIES
+        CXX_STANDARD 20
+        CXX_STANDARD_REQUIRED ON
+)
+target_sources(
+        ${PROJECT_NAME}
+        PRIVATE
         src/main.cpp
         src/log.cpp
         src/model/board.cpp
         src/model/fifteen_puzzle_game.cpp
         src/view/game_render.cpp
-        src/controller/game_controller.cpp)
-
-set(HEADERS
-        include/assets.h
-        include/log.h
-        include/model/board.h
-        include/model/fifteen_puzzle_game.h
-        include/view/game_render.h
-        include/controller/game_controller.h)
-
-set(PROJECT_INCLUDE_DIR include)
-
-add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
-set_target_properties(
-        ${PROJECT_NAME} PROPERTIES
-        CXX_STANDARD 20
-        CXX_STANDARD_REQUIRED ON
+        src/controller/game_controller.cpp
 )
 target_include_directories(
         ${PROJECT_NAME}

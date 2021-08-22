@@ -11,6 +11,9 @@
 #ifndef FIFTEEN_PUZZLE_GAME_INCLUDE_GAME_CONTROLLER_H_
 #define FIFTEEN_PUZZLE_GAME_INCLUDE_GAME_CONTROLLER_H_
 
+#include <stdlib.h>
+#include <time.h>
+
 #include "view/game_render.h"
 #include "game_controller.h"
 

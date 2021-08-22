@@ -11,6 +11,7 @@ This file contains functions for work on resources of game
 #include <SFML/Graphics.hpp>
 #include <string>
 #include <exception>
+#include <optional>
 
 namespace Game {
 
@@ -21,10 +22,10 @@ namespace Game {
  *
  * @return SFML format font
  */
-sf::Font LoadFont(std::string fontName) {
+std::optional<sf::Font> LoadFont(std::string fontName) {
   sf::Font font;
   if (!font.loadFromFile(fontName))
-    throw std::runtime_error("Could not open file");
+    return {};
   return font;
 }
 }

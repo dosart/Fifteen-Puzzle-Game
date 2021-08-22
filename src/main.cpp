@@ -9,16 +9,13 @@ int main() {
   ::Game::Log::Init();
   GAME_WARN("Initialized log!");
 
-  try {
-    auto font = Game::LoadFont("../resources/calibri.ttf");
-
+  if (auto font = Game::LoadFont("../resources/calibri.ttf"); font.has_value()) {
     ::Game::FifteenPuzzleGame game;
-    ::Game::GameRender render(&game, font);
+    ::Game::GameRender render(&game, font.value());
     ::Game::GameController controller(&game, &render);
     controller.Run();
-  }
-  catch (...) {
+  } else
     GAME_CRITICAL("Font could not find!");
-  }
+
   return 0;
 }

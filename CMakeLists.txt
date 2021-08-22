@@ -19,7 +19,7 @@ project(${PROJECT_NAME} VERSION 0.0.1
 ###################################################################################################
 
 option(USE_DOC "Turn on documentation" ON)
-option(USE_TEST "Turn on testing" OFF)
+option(USE_TEST "Turn on testing" ON)
 
 ###################################################################################################
 ##
@@ -63,6 +63,7 @@ set_target_properties(
         CXX_STANDARD 20
         CXX_STANDARD_REQUIRED ON
 )
+
 target_sources(
         ${PROJECT_NAME}
         PRIVATE
@@ -107,4 +108,16 @@ if (NOT USE_DOC)
     message(STATUS "Autodocumentation is disabled")
 else ()
     add_subdirectory(doc)
+endif ()
+
+###################################################################################################
+##
+##      Tests
+##
+###################################################################################################
+
+if (NOT USE_TEST)
+    message(STATUS "Tests is disabled")
+else ()
+    add_subdirectory(test)
 endif ()

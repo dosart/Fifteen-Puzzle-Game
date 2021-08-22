@@ -22,7 +22,7 @@ bool Game::Board::IsSolved() const {
 
 bool Game::Board::isCellCorrect(int row, int column) {
   auto index = static_cast<std::vector<int>::size_type>(Convert2DIndexTo1DIndex(row, column, m_row_count));
-  return m_board[index]==m_board[index] + 1;
+  return m_board[index]== int(index + 1);
 }
 
 void Game::Board::MoveEmptyPlate(Game::Direction direction) {

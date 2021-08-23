@@ -13,7 +13,7 @@
 #include <utility>
 #include <assert.h>
 
-using coordinate = std::pair<int, int>;
+#include "utils/converter.h"
 
 namespace Game {
 
@@ -107,9 +107,6 @@ class Board final {
   int m_empty_index;
 
   std::vector<int> m_board;
-
-  coordinate Convert1DIndexTo2DIndex(int index1d, int rows, int columns);
-  int Convert2DIndexTo1DIndex(int row, int column, int row_count);
 };
 }
 

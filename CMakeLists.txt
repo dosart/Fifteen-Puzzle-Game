@@ -68,6 +68,7 @@ target_sources(
         PRIVATE
         src/main.cpp
         src/utils/log.cpp
+        include/utils/converter.h
         src/model/board.cpp
         src/model/fifteen_puzzle_game.cpp
         src/view/game_render.cpp

@@ -21,12 +21,12 @@ bool Game::Board::IsSolved() const {
 }
 
 bool Game::Board::isCellCorrect(int row, int column) {
-  auto index = static_cast<std::vector<int>::size_type>(Convert2DIndexTo1DIndex(row, column, m_row_count));
-  return m_board[index]== int(index + 1);
+  auto index = static_cast<std::vector<int>::size_type>(Utils::Convert2DIndexTo1DIndex(row, column, m_row_count));
+  return m_board[index]==int(index + 1);
 }
 
 void Game::Board::MoveEmptyPlate(Game::Direction direction) {
-  auto[row, column] = Convert1DIndexTo2DIndex(m_empty_index, m_row_count, m_row_count);
+  auto[row, column] = Utils::Convert1DIndexTo2DIndex(m_empty_index, m_row_count, m_row_count);
 
   int move_index = -1;
   if (direction==Direction::Left && column < (m_row_count - 1)) move_index = m_empty_index + 1;
@@ -41,22 +41,14 @@ void Game::Board::MoveEmptyPlate(Game::Direction direction) {
 
 }
 
-coordinate Game::Board::Convert1DIndexTo2DIndex(int index1d, int rows, int columns) {
-  return std::make_pair(index1d/rows, index1d%columns);
-}
-
 bool Game::Board::isNotEmptyElement(int row, int column) {
   int value = this->at(row, column);
   return value > 0;
 }
 
 int Game::Board::at(int row, int column) {
-  auto index = static_cast<std::vector<int>::size_type>(Convert2DIndexTo1DIndex(row, column, m_row_count));
+  auto index = static_cast<std::vector<int>::size_type>(Utils::Convert2DIndexTo1DIndex(row, column, m_row_count));
   return m_board[index];
-}
-
-int Game::Board::Convert2DIndexTo1DIndex(int row, int column, int row_count) {
-  return row*row_count + column;
 }
 
 int Game::Board::GetRowCount() const {

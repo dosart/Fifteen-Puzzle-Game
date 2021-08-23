@@ -42,8 +42,8 @@ class FifteenPuzzleGame final {
 */
   bool IsSolved() const;
  private:
-  const int m_kRowCount = 4;
-  const int m_kColumnCount = 4;
+  const size_t m_kRowCount = 4;
+  const size_t m_kColumnCount = 4;
 
   Board m_board;
 };

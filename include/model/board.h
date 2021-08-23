@@ -37,7 +37,7 @@ class Board final {
      * @param row_count Row count of game board.
      * @param row_count Column count of game board.
  */
-  Board(int row_count = 4, int column_count = 4);
+  Board(size_t row_count = 4, size_t column_count = 4);
   ~Board() = default;
 
   /**
@@ -60,7 +60,7 @@ class Board final {
     *
     * @return Result of the check
  */
-  bool isCellCorrect(int row, int column);
+  bool isCellCorrect(size_t row, size_t column);
 
   /**
     * @brief Returns true if cell empty.
@@ -70,7 +70,7 @@ class Board final {
     *
     * @return Result of the check
 */
-  bool isNotEmptyElement(int row, int column);
+  bool isNotEmptyElement(size_t row, size_t column);
 
   /**
     * @brief Swap an empty plate and a user plate
@@ -85,26 +85,26 @@ class Board final {
     *
     * @return Contains of cell
 */
-  int at(int row, int column);
+  int at(size_t row, size_t column);
 
   /**
     * @brief Returns rows count of board.
     *
     * @return Row count of board/
 */
-  int GetRowCount() const;
+  size_t GetRowCount() const;
 
   /**
   * @brief Returns columns count of board.
   *
   * @return columns count of board/
 */
-  int GetColumnCount() const;
+  size_t GetColumnCount() const;
  private:
-  int m_row_count = 4;
-  int m_column_count = 4;
-  int m_cell_count = m_row_count*m_row_count;
-  int m_empty_index;
+  size_t m_row_count = 4;
+  size_t m_column_count = 4;
+  size_t m_cell_count = m_row_count*m_row_count;
+  size_t m_empty_index;
 
   std::vector<int> m_board;
 };

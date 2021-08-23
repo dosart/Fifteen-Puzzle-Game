@@ -46,8 +46,8 @@ void Game::GameRender::draw(sf::RenderTarget &target, sf::RenderStates states) c
   sf::Text textInCell("", m_font, 52);
 
   auto &board = m_game->GetBoard();
-  for (auto row = 0; row < board.GetRowCount(); ++row) {
-    for (auto column = 0; column < board.GetColumnCount(); ++column) {
+  for (size_t row = 0; row < board.GetRowCount(); ++row) {
+    for (size_t column = 0; column < board.GetColumnCount(); ++column) {
 
       auto numberAsString = std::to_string(board.at(row, column));
       textInCell.setString(numberAsString);
@@ -68,7 +68,7 @@ void Game::GameRender::draw(sf::RenderTarget &target, sf::RenderStates states) c
   }
 }
 
-void Game::GameRender::_setPosition(sf::RectangleShape &cellOfBoard, sf::Text &textInCell, int row, int column) const {
+void Game::GameRender::_setPosition(sf::RectangleShape &cellOfBoard, sf::Text &textInCell, size_t row, size_t column) const {
   float column_float = static_cast<float>(column);
   float row_float = static_cast<float>(row);
 

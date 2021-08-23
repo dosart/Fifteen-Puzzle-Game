@@ -36,7 +36,8 @@ target_sources(${PROJECT_NAME}
         PRIVATE
         ../include/assets.h
         test_main.cpp
-        game_test/test_assets.cpp)
+        game_test/test_assets.cpp
+        game_test/test_utils.cpp)
 
 target_link_libraries(${PROJECT_NAME}
         PRIVATE

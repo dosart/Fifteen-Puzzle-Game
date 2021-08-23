@@ -35,9 +35,11 @@ target_include_directories(${PROJECT_NAME}
 target_sources(${PROJECT_NAME}
         PRIVATE
         ../include/assets.h
+        ../src/model/board.cpp
         test_main.cpp
         game_test/test_assets.cpp
-        game_test/test_utils.cpp)
+        game_test/test_utils.cpp
+        game_test/test_board.cpp)
 
 target_link_libraries(${PROJECT_NAME}
         PRIVATE

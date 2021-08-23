@@ -3,9 +3,9 @@
 Game::Board::Board(size_t rows, size_t columns)
     : m_row_count{rows},
       m_column_count{columns},
-      m_cell_count{rows*m_column_count},
+      m_cell_count{m_row_count*m_column_count},
       m_empty_index{m_cell_count - 1},
-      m_board(16, 0) {
+      m_board(m_cell_count, 0) {
 
   Init();
 }

@@ -1,5 +1,5 @@
 
-#include "log.h"
+#include "utils/log.h"
 #include "assets.h"
 #include "model/fifteen_puzzle_game.h"
 #include "view/game_render.h"

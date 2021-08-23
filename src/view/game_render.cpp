@@ -54,6 +54,9 @@ void Game::GameRender::draw(sf::RenderTarget &target, sf::RenderStates states) c
 
       _setPosition(cellOfBoard, textInCell, row, column);
 
+      cellOfBoard.setOutlineColor(color);
+      textInCell.setFillColor(color);
+
       if (m_game->IsSolved()) {
         frameOfBoard.setOutlineColor(sf::Color::Cyan);
         textInCell.setFillColor(sf::Color::Cyan);
@@ -68,7 +71,10 @@ void Game::GameRender::draw(sf::RenderTarget &target, sf::RenderStates states) c
   }
 }
 
-void Game::GameRender::_setPosition(sf::RectangleShape &cellOfBoard, sf::Text &textInCell, size_t row, size_t column) const {
+void Game::GameRender::_setPosition(sf::RectangleShape &cellOfBoard,
+                                    sf::Text &textInCell,
+                                    size_t row,
+                                    size_t column) const {
   float column_float = static_cast<float>(column);
   float row_float = static_cast<float>(row);
 

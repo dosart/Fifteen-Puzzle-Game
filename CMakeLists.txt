@@ -68,7 +68,7 @@ target_sources(
         ${PROJECT_NAME}
         PRIVATE
         src/main.cpp
-        src/log.cpp
+        src/utils/log.cpp
         src/model/board.cpp
         src/model/fifteen_puzzle_game.cpp
         src/view/game_render.cpp

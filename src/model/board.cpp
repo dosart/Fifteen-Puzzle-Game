@@ -12,6 +12,7 @@ Game::Board::Board(size_t rows, size_t columns)
 
 void Game::Board::Init() {
   std::iota(std::begin(m_board), std::end(m_board), 1);
+  m_empty_index = m_cell_count - 1;
   m_board[m_empty_index] = 0;
 }
 

@@ -9,7 +9,6 @@ GameController::GameController(FifteenPuzzleGame *game, GameRender *render)
 void GameController::Run() {
   sf::Event event;
 
-  std::array<Direction, 4> direction = {Direction::Left, Direction::Right, Direction::Down, Direction::Up};
   int move_counter = 0;
 
   while (m_render->Window().isOpen()) {
@@ -53,6 +52,5 @@ void GameController::Run() {
 
     m_render->Render();
   }
-
 }
 }

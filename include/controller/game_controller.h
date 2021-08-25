@@ -46,6 +46,8 @@ class GameController final {
  private:
   FifteenPuzzleGame *m_game;
   GameRender *m_render;
+
+  std::array<Direction, 4> direction = {Direction::Left, Direction::Right, Direction::Down, Direction::Up};
 };
 }
 

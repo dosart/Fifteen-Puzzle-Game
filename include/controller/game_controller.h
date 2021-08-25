@@ -16,6 +16,7 @@
 
 #include "view/game_render.h"
 #include "game_controller.h"
+#include "utils/log.h"
 
 namespace Game {
 

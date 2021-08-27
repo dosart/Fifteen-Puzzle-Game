@@ -12,6 +12,8 @@ one pictures  | two pictures |
 ------------- | ------------- | 
 ![alt text](https://github.com/dosart/Fifteen-Puzzle-Game/blob/main/resources/images/11.png) | ![alt text](https://github.com/dosart/Fifteen-Puzzle-Game/blob/main/resources/images/22.png) 
 
+The key bindings are: <kbd>&uarr;</kbd>, <kbd>&darr;</kbd>, <kbd>&larr;</kbd>, <kbd>&rarr;</kbd>. <kbd>F2</kbd>
+
 ## Installation
 - git clone https://github.com/dosart/Fifteen-Puzzle-Game.git
 - git submodule update --remote

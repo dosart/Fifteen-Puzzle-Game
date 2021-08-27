@@ -51,7 +51,6 @@ void Game::Board::MoveEmptyPlate(Game::Direction direction) {
     std::swap(m_board[m_empty_index], m_board[move_index]);
     std::swap(m_empty_index, move_index);
   }
-
 }
 
 bool Game::Board::isNotEmptyElement(size_t row, size_t column) {

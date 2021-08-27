@@ -3,7 +3,7 @@
 namespace Game {
 
 GameController::GameController(FifteenPuzzleGame *game, GameRender *render)
-    : m_game(game), m_render(render) {
+    : m_game{game}, m_render{render} {
 
 }
 void GameController::Run() {

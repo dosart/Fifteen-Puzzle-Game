@@ -1,4 +1,5 @@
-![cppcheck-action](https://github.com/stepin654321/MiniProject_Template/workflows/cppcheck-action/badge.svg) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/91a73b5827b44e08bd2aef3a057a88b3)](https://www.codacy.com/gh/dosart/Fifteen-Puzzle-Game/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=dosart/Fifteen-Puzzle-Game&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/91a73b5827b44e08bd2aef3a057a88b3)](https://www.codacy.com/gh/dosart/Fifteen-Puzzle-Game/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=dosart/Fifteen-Puzzle-Game&amp;utm_campaign=Badge_Grade)
+ ![cppcheck-action](https://github.com/stepin654321/MiniProject_Template/workflows/cppcheck-action/badge.svg) ![Valgrind](https://github.com/stepin654321/MiniProject_Template/workflows/Valgrind/badge.svg)
 
 # Fifteen-Puzzle-Game
 

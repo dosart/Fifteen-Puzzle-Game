@@ -7,6 +7,7 @@ The 15 puzzle (also called Gem Puzzle, Boss Puzzle, Game of Fifteen, Mystic Squa
 
 - **Technology stack:** sfml, c++17, spdlog, google test, doxygen, cmake
 - **Status:** v.1.0
+- **Architecture:** MVC
 
 first pictures  | second pictures |
 ------------- | ------------- | 

@@ -8,7 +8,7 @@ The 15 puzzle (also called Gem Puzzle, Boss Puzzle, Game of Fifteen, Mystic Squa
 - **Technology stack:** sfml, c++17, spdlog, google test, doxygen, cmake
 - **Status:** v.1.0
 
-one pictures  | two pictures |
+first pictures  | second pictures |
 ------------- | ------------- | 
 ![alt text](https://github.com/dosart/Fifteen-Puzzle-Game/blob/main/resources/images/11.png) | ![alt text](https://github.com/dosart/Fifteen-Puzzle-Game/blob/main/resources/images/22.png) 
 

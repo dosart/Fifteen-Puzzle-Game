@@ -7,7 +7,7 @@
 cmake_minimum_required(VERSION 3.16)
 
 set(PROJECT_NAME Fifteen_Puzzle_Game)
-project(${PROJECT_NAME} VERSION 0.0.1
+project(${PROJECT_NAME} VERSION 1.0.0
         DESCRIPTION "Fifteen puzzle game"
         LANGUAGES CXX
         )
@@ -59,7 +59,7 @@ set(PROJECT_INCLUDE_DIR include)
 add_executable(${PROJECT_NAME})
 set_target_properties(
         ${PROJECT_NAME} PROPERTIES
-        CXX_STANDARD 20
+        CXX_STANDARD 17
         CXX_STANDARD_REQUIRED ON
 )
 

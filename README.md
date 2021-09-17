@@ -16,10 +16,6 @@ first pictures  | second pictures |
 The key bindings are: <kbd>&uarr;</kbd>, <kbd>&darr;</kbd>, <kbd>&larr;</kbd>, <kbd>&rarr;</kbd>. <kbd>F2</kbd>
 
 ## Installation
-git clone https://github.com/dosart/Fifteen-Puzzle-Game.git
-git submodule update --remote
-sudo apt-get install libsfml-dev
-sudo apt-get install libgtest-dev
 
 ```console
 $ git clone https://github.com/dosart/Fifteen-Puzzle-Game.git

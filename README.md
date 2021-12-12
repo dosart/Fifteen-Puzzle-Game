@@ -19,10 +19,11 @@ The key bindings are: <kbd>&uarr;</kbd>, <kbd>&darr;</kbd>, <kbd>&larr;</kbd>, <
 
 ```console
 $ git clone https://github.com/dosart/Fifteen-Puzzle-Game.git
-$ git submodule update --remote
+$ cd Fifteen-Puzzle-Game.git
+$ git submodule init && git submodule update
 $ sudo apt-get install libsfml-dev
 $ sudo apt-get install libgtest-dev
 
-$ cd Fifteen-Puzzle-Game && mkdir build && cd build
+$ mkdir build && cd build
 $ cmake .. && make -j
 ```
